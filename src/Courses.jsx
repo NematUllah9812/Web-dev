@@ -1,6 +1,5 @@
-import React from "react";
 
-// Example data array for gaming shop with ratings
+
 const games = [
   { id: 1, title: "Call of Duty: Modern Warfare II", price: "$59.99", platform: "PC / PS5 / Xbox", image: "cod.jpg", rating: "IGN 7.5/10" },
   { id: 2, title: "Elden Ring", price: "$49.99", platform: "PC / PS5 / Xbox", image: "eldenring.jpg", rating: "IGN 10/10" },
