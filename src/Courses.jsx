@@ -7,7 +7,6 @@ const games = [
   { id: 3, title: "FIFA 24", price: "$39.99", platform: "PC / PS5 / Xbox / Switch", image: "fifa24.jpg", rating: "IGN 8/10" },
   { id: 4, title: "Minecraft", price: "$19.99", platform: "PC / PS5 / Xbox / Switch / Mobile", image: "minecraft.jpg", rating: "IGN 9/10" },
   { id: 5, title: "Grand Theft Auto V", price: "$29.99", platform: "PC / PS5 / Xbox", image: "gta5.jpg", rating: "IGN 10/10" },
-  { id: 5, title: "Grand Theft Auto V", price: "$29.99", platform: "PC / PS5 / Xbox", image: "gta5.jpg", rating: "IGN 10/10" },
   { id: 6, title: "Cyberpunk 2077", price: "$39.99", platform: "PC / PS5 / Xbox", image: "cyberpunk2077.jpg", rating: "IGN 7/10" },
   { id: 7, title: "Red Dead Redemption 2", price: "$49.99", platform: "PC / PS5 / Xbox", image: "rdr2.jpg", rating: "IGN 9.7/10" },
   { id: 8, title: "The Witcher 3: Wild Hunt", price: "$19.99", platform: "PC / PS5 / Xbox / Switch", image: "witcher3.jpg", rating: "IGN 9.3/10" },

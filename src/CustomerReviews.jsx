@@ -1,4 +1,6 @@
+import React from "react";
 
+// Example customer reviews data
 const reviews = [
   { id: 1, name: "John Doe", review: "Excellent service and quick delivery! Highly satisfied with my purchase.", rating: 5 },
   { id: 2, name: "Mary Smith", review: "The product quality is great, but shipping took a little longer than expected.", rating: 4 },

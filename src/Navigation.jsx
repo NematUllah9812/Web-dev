@@ -1,11 +1,13 @@
 function Navigation() {
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div className="container-fluid">
+        {/* Brand / Logo */}
         <a className="navbar-brand fw-bold" href="#">
           🎮 GameStore
         </a>
 
+        {/* Mobile Toggle */}
         <button
           className="navbar-toggler"
           type="button"
@@ -27,6 +29,7 @@ function Navigation() {
               </a>
             </li>
 
+            {/* Shop Dropdown */}
             <li className="nav-item dropdown">
               <a
                 className="nav-link dropdown-toggle"
@@ -60,6 +63,7 @@ function Navigation() {
             </li>
           </ul>
 
+          {/* Cart button */}
           <a href="#" className="btn btn-warning ms-3">
             🛒 Cart
           </a>

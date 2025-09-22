@@ -1,4 +1,3 @@
-
 function Footer() {
   return (
     <footer className="bg-dark text-light pt-4 mt-5">
