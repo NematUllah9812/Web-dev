@@ -5,6 +5,7 @@ const reviews = [
   { id: 3, name: "Sara Ahmed", review: "Amazing experience! LynixFit’s customer support helped me with size exchange smoothly.", rating: 5 },
 ];
 
+
 function CustomerReviews() {
   return (
     <div className="container my-5">
