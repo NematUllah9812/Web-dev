@@ -1,36 +1,64 @@
-import React from "react";
-
-// Example customer reviews data
-const reviews = [
-  { id: 1, name: "John Doe", review: "Excellent service and quick delivery! Highly satisfied with my purchase.", rating: 5 },
-  { id: 2, name: "Mary Smith", review: "The product quality is great, but shipping took a little longer than expected.", rating: 4 },
-  { id: 3, name: "Ali Raza", review: "Amazing experience! The customer support was very helpful.", rating: 5 },
-];
-
 function CustomerReviews() {
-  return (
-    <div className="container my-5">
-      <h2 className="text-light mb-3">Customer Reviews</h2>
-      <p className="text-muted mb-4">
-        See what our customers have to say about their shopping experience.
-      </p>
+  const reviews = [
+    {
+      id: 1,
+      name: "Alex Johnson",
+      review: "Absolutely love the graphics and gameplay! Feels so immersive.",
+    },
+    {
+      id: 2,
+      name: "Maria Lopez",
+      review: "Customer support was fast and friendly. Great experience overall!",
+    },
+    {
+      id: 3,
+      name: "James Carter",
+      review: "The discounts make premium games affordable. Totally recommend!",
+    },
+  ];
 
-      <div className="row">
-        {reviews.map((rev) => (
-          <div key={rev.id} className="col-md-4 mb-3">
-            <div className="card bg-dark text-light h-100 shadow-lg">
-              <div className="card-body">
-                <h5 className="card-title">{rev.name}</h5>
-                <p className="card-text">{rev.review}</p>
-                <p className="text-warning">
-                  {"⭐".repeat(rev.rating)} <span className="text-muted">({rev.rating}/5)</span>
-                </p>
+  return (
+    <section
+      id="reviews"
+      className="py-5"
+      style={{ backgroundColor: "#0d0d0d" }}
+    >
+      <div className="container">
+        <h2 className="text-center mb-5 fw-bold text-light display-6">
+          What Gamers Say
+        </h2>
+        <div className="row g-4">
+          {reviews.map((review) => (
+            <div key={review.id} className="col-md-4">
+              <div
+                className="card h-100 border-0 shadow-lg rounded-4 text-light"
+                style={{
+                  background: "rgba(30,30,47,0.8)",
+                  backdropFilter: "blur(6px)",
+                  border: "1px solid rgba(255,255,255,0.1)",
+                  transition: "transform 0.3s ease, box-shadow 0.3s ease",
+                }}
+                onMouseEnter={(e) =>
+                  (e.currentTarget.style.transform = "translateY(-5px)")
+                }
+                onMouseLeave={(e) =>
+                  (e.currentTarget.style.transform = "translateY(0)")
+                }
+              >
+                <div className="card-body text-center p-4">
+                  <h6 className="fw-semibold text-danger mb-3">
+                    {review.name}
+                  </h6>
+                  <p className="fst-italic text-light opacity-75">
+                    “{review.review}”
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
-    </div>
+    </section>
   );
 }
 

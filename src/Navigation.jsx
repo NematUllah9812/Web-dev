@@ -1,15 +1,23 @@
+import logo from "./assets/cod.png"
 function Navigation() {
+  
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-      <div className="container-fluid">
-        {/* Brand / Logo */}
-        <a className="navbar-brand fw-bold" href="#">
-          🎮 GameStore
+    <nav className="navbar navbar-expand-lg bg-white shadow-sm fixed-top">
+      <div className="container-fluid px-4">
+        {/* Logo */}
+        <a className="navbar-brand fw-bold text-dark" href="#">
+          <img
+            src= {logo}
+            alt="EA Games"
+            height="32"
+            className="me-2"
+          />
+          GameStore
         </a>
 
-        {/* Mobile Toggle */}
+        {/* Mobile Toggler */}
         <button
-          className="navbar-toggler"
+          className="navbar-toggler border-0"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarNav"
@@ -20,53 +28,45 @@ function Navigation() {
           <span className="navbar-toggler-icon"></span>
         </button>
 
-        {/* Links */}
+        {/* Nav Items */}
         <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav ms-auto">
+          <ul className="navbar-nav mx-auto">
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="#">
+              <a className="nav-link fw-semibold text-dark" href="#">
                 Home
               </a>
             </li>
-
-            {/* Shop Dropdown */}
-            <li className="nav-item dropdown">
-              <a
-                className="nav-link dropdown-toggle"
-                href="#"
-                id="shopDropdown"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
+            <li className="nav-item">
+              <a className="nav-link fw-semibold text-dark" href="#">
+                Games
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link fw-semibold text-dark" href="#">
                 Shop
               </a>
-              <ul className="dropdown-menu dropdown-menu-dark" aria-labelledby="shopDropdown">
-                <li><a className="dropdown-item" href="#">🎮 All Games</a></li>
-                <li><a className="dropdown-item" href="#">🔥 Best Sellers</a></li>
-                <li><a className="dropdown-item" href="#">🆕 New Releases</a></li>
-                <li><a className="dropdown-item" href="#">💸 Discounts</a></li>
-                <li><hr className="dropdown-divider" /></li>
-                <li><a className="dropdown-item" href="#">🖥️ Platforms</a></li>
-              </ul>
             </li>
-
             <li className="nav-item">
-              <a className="nav-link" href="#">
-                Customer Reviews
+              <a className="nav-link fw-semibold text-dark" href="#">
+                Reviews
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <a className="nav-link fw-semibold text-dark" href="#">
                 Contact
               </a>
             </li>
           </ul>
 
-          {/* Cart button */}
-          <a href="#" className="btn btn-warning ms-3">
-            🛒 Cart
-          </a>
+          {/* Right Section (Cart & Login) */}
+          <div className="d-flex align-items-center">
+            <a href="#login" className="btn btn-link text-dark me-3">
+              Login
+            </a>
+            <a href="#" className="btn btn-dark px-3 rounded-pill">
+              🛒 Cart
+            </a>
+          </div>
         </div>
       </div>
     </nav>
