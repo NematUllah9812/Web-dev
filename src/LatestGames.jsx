@@ -37,7 +37,7 @@ function LatestGames() {
   ];
 
   return (
-    <section className="latest-games py-5 bg-dark text-white">
+    <section id = "Latestgames" className="latest-games py-5 bg-dark text-white">
       <div className="container">
         <h2 className="text-center mb-5 fw-bold display-5">Latest Games</h2>
         <div className="row g-4">

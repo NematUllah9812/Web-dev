@@ -33,10 +33,10 @@ function HeroSection() {
           Discover the latest releases, best sellers, and exclusive discounts – all in one place.
         </p>
         <div>
-          <a href="#" className="btn btn-danger btn-lg me-3 rounded-pill px-4">
+          <a href="#latestgames" className="btn btn-danger btn-lg me-3 rounded-pill px-4">
             Buy Now
           </a>
-          <a href="#" className="btn btn-outline-light btn-lg rounded-pill px-4">
+          <a href="#games" className="btn btn-outline-light btn-lg rounded-pill px-4">
             Learn More
           </a>
         </div>

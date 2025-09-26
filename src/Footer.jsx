@@ -21,17 +21,17 @@ function Footer() {
                 </a>
               </li>
               <li>
-                <a href="#" className="text-light text-decoration-none opacity-75">
+                <a href="#games" className="text-light text-decoration-none opacity-75">
                   Shop
                 </a>
               </li>
               <li>
-                <a href="#" className="text-light text-decoration-none opacity-75">
+                <a href="#reviews" className="text-light text-decoration-none opacity-75">
                   Reviews
                 </a>
               </li>
               <li>
-                <a href="#" className="text-light text-decoration-none opacity-75">
+                <a href="#login" className="text-light text-decoration-none opacity-75">
                   Contact
                 </a>
               </li>

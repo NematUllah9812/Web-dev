@@ -37,22 +37,22 @@ function Navigation() {
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link fw-semibold text-dark" href="#">
+              <a className="nav-link fw-semibold text-dark" href="#games">
                 Games
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link fw-semibold text-dark" href="#">
+              <a className="nav-link fw-semibold text-dark" href="#games">
                 Shop
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link fw-semibold text-dark" href="#">
+              <a className="nav-link fw-semibold text-dark" href="#reviews">
                 Reviews
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link fw-semibold text-dark" href="#">
+              <a className="nav-link fw-semibold text-dark" href="#login">
                 Contact
               </a>
             </li>

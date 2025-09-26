@@ -20,8 +20,8 @@ const games = [
 
 function Games() {
   return <>
-    <h2 className="text-center mb-5 fw-bold display-5">Latest Games</h2>
-    <div className="d-flex flex-wrap justify-content-center gap-4 p-4">
+    <h2 className="text-center mb-5 fw-bold display-5">Latest Games</h2 >
+    <div id = "games" className="d-flex flex-wrap justify-content-center gap-4 p-4">
       {games.map((game) => (
         <div
           key={game.id}
