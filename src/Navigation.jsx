@@ -1,4 +1,4 @@
-import logo from "./assets/cod.png";
+import logo from "./assets/logo1.webp";
 
 function Navigation() {
   return (
@@ -10,13 +10,11 @@ function Navigation() {
       }}
     >
       <div className="container-fluid px-4">
-        {/* Logo + Brand */}
         <a className="navbar-brand fw-bold d-flex align-items-center" href="#home">
-          <img src={logo} alt="GameStore" height="36" className="me-2 rounded" />
-          <span className="fs-4">GameStore</span>
+          <img src={logo} alt="PixelArena" height="36" className="me-2 rounded" />
+          <span className="fs-4">PixelArena</span>
         </a>
 
-        {/* Mobile toggle button */}
         <button
           className="navbar-toggler border-0"
           type="button"
@@ -29,7 +27,6 @@ function Navigation() {
           <span className="navbar-toggler-icon"></span>
         </button>
 
-        {/* Navbar links */}
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav mx-auto">
             <li className="nav-item px-2">
@@ -38,7 +35,6 @@ function Navigation() {
               </a>
             </li>
 
-            {/* Games Dropdown */}
             <li className="nav-item dropdown px-2">
               <a
                 className="nav-link dropdown-toggle fw-semibold"
@@ -63,7 +59,6 @@ function Navigation() {
             <li className="nav-item px-2"><a className="nav-link fw-semibold" href="#contact">Contact</a></li>
           </ul>
 
-          {/* Right section */}
           <div className="d-flex flex-column flex-lg-row align-items-lg-center gap-2 gap-lg-3 mt-3 mt-lg-0">
             <a href="#signup" className="btn btn-outline-light btn-sm px-3 rounded-pill fw-semibold">
               Login / Sign-Up

@@ -31,7 +31,6 @@ function Games() {
               <div key={game.id} className="col-12 col-sm-6 col-md-4 col-lg-3">
                 <div className="card bg-dark text-light shadow-lg border-0 h-100 position-relative">
                   
-                  {/* Discount Badge */}
                   {game.discount > 0 && (
                     <span
                       className="badge bg-danger position-absolute"
@@ -41,7 +40,6 @@ function Games() {
                     </span>
                   )}
 
-                  {/* Game Image */}
                   <img
                     src={game.image}
                     alt={game.title}
@@ -49,11 +47,9 @@ function Games() {
                     style={{ height: "180px", objectFit: "cover" }}
                   />
 
-                  {/* Card Body */}
                   <div className="card-body d-flex flex-column">
                     <h5 className="card-title mb-2">{game.title}</h5>
 
-                    {/* Price Section */}
                     <p className="card-text mb-2">
                       {game.discount > 0 ? (
                         <>
@@ -70,7 +66,6 @@ function Games() {
                     <p className="card-text small mb-1"><strong>Platform:</strong> {game.platform}</p>
                     <p className="card-text small mb-3"><strong>Rating:</strong> {game.rating}</p>
 
-                    {/* Buttons */}
                     <div className="mt-auto d-flex justify-content-between gap-2">
                       <button className="btn btn-danger rounded-pill w-50">Buy Now</button>
                       <button className="btn btn-outline-light rounded-pill w-50">Add to Cart</button>
@@ -80,6 +75,15 @@ function Games() {
               </div>
             );
           })}
+        </div>
+
+        <div className="text-center mt-5">
+          <button
+            className="btn btn-outline-warning rounded-pill px-4"
+            onClick={() => window.location.href = "/more-games.html"}
+          >
+            More Games →
+          </button>
         </div>
       </div>
     </section>

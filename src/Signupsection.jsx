@@ -30,10 +30,10 @@ function SignupSection() {
       <div
         className="card text-light p-4 shadow-lg"
         style={{
-          maxWidth: "420px",
+          maxWidth: "450px",
           width: "100%",
           background: "rgba(255, 255, 255, 0.1)",
-          backdropFilter: "blur(12px)",
+          backdropFilter: "blur(10px)",
           border: "1px solid rgba(255,255,255,0.2)",
           zIndex: 2,
         }}
@@ -41,6 +41,7 @@ function SignupSection() {
         <h3 className="text-center mb-4 fw-bold">Create Account</h3>
 
         <form>
+          {/* Full Name */}
           <div className="mb-3">
             <label htmlFor="signupName" className="form-label">
               Full Name
@@ -54,6 +55,7 @@ function SignupSection() {
             />
           </div>
 
+          {/* Email */}
           <div className="mb-3">
             <label htmlFor="signupEmail" className="form-label">
               Email
@@ -67,6 +69,7 @@ function SignupSection() {
             />
           </div>
 
+          {/* Password */}
           <div className="mb-3">
             <label htmlFor="signupPassword" className="form-label">
               Password
@@ -80,6 +83,54 @@ function SignupSection() {
             />
           </div>
 
+          {/* Confirm Password */}
+          <div className="mb-3">
+            <label htmlFor="signupConfirmPassword" className="form-label">
+              Confirm Password
+            </label>
+            <input
+              type="password"
+              className="form-control bg-transparent text-light border-light placeholder-light"
+              id="signupConfirmPassword"
+              placeholder="Confirm password"
+              required
+            />
+          </div>
+
+          {/* Gender */}
+          <div className="mb-3">
+            <label className="form-label">Gender</label>
+            <div className="d-flex gap-3">
+              <div className="form-check">
+                <input
+                  className="form-check-input"
+                  type="radio"
+                  name="gender"
+                  id="male"
+                  value="male"
+                  required
+                />
+                <label className="form-check-label" htmlFor="male">
+                  Male
+                </label>
+              </div>
+              <div className="form-check">
+                <input
+                  className="form-check-input"
+                  type="radio"
+                  name="gender"
+                  id="female"
+                  value="female"
+                  required
+                />
+                <label className="form-check-label" htmlFor="female">
+                  Female
+                </label>
+              </div>
+            </div>
+          </div>
+
+          {/* Submit */}
           <button
             type="submit"
             className="btn btn-danger w-100 rounded-pill mt-2"
@@ -88,17 +139,21 @@ function SignupSection() {
           </button>
         </form>
 
+        {/* Login Redirect */}
         <div className="text-center mt-4">
           <small className="opacity-75">
             Already have an account?{" "}
-            <a href="#auth" className="text-danger fw-semibold text-decoration-none">
+            <a
+              href="#auth"
+              className="text-danger fw-semibold text-decoration-none"
+            >
               Login
             </a>
           </small>
         </div>
       </div>
 
-      {/* Inline style for placeholders */}
+      {/* Placeholder styling */}
       <style>
         {`
           .placeholder-light::placeholder {

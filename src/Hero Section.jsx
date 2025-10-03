@@ -10,7 +10,6 @@ function HeroSection() {
         backgroundPosition: "center",
       }}
     >
-      {/* Overlay */}
       <div
         className="overlay position-absolute top-0 start-0 w-100 h-100"
         style={{
@@ -19,7 +18,6 @@ function HeroSection() {
         }}
       ></div>
 
-      {/* Content */}
       <div className="container position-relative z-2" style={{ zIndex: 2 }}>
         <h1 className="display-4 display-md-3 fw-bold mb-3">
           Experience Gaming Like Never Before

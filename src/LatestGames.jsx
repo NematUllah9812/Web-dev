@@ -21,7 +21,6 @@ function LatestGames() {
           {latestGames.map((game) => (
             <div key={game.id} className="col-12 col-md-6 col-lg-3">
               <div className="card border-0 h-100 game-card">
-                {/* Image with overlay */}
                 <div className="position-relative">
                   <img
                     src={game.image}
@@ -44,7 +43,6 @@ function LatestGames() {
                   ></div>
                 </div>
 
-                {/* Card body */}
                 <div className="card-body d-flex flex-column text-light p-3">
                   <h5 className="card-title fw-bold fs-5 text-warning">
                     {game.title}
@@ -63,7 +61,6 @@ function LatestGames() {
         </div>
       </div>
 
-      {/* Extra CSS for hover effect */}
       <style>
         {`
           .game-card {
