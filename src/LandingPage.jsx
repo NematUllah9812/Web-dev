@@ -1,51 +1,42 @@
 import Navigation from "./Navigation";
 import Games from "./Games";
-import StudentReviews from "./CustomerReviews";
+import CustomerReviews from "./CustomerReviews";
 import Footer from "./Footer";
 import HeroSection from "./Hero Section";
 import LatestGames from "./LatestGames";
-import Login from "./Login";
+import SignupSection from "./Signupsection";
+import Sidebar from "./Sidebar";
 
 function LandingPage() {
   return (
     <>
+      <Sidebar />
+
       <div
         className="container-fluid min-vh-100 text-light"
         style={{ backgroundColor: "#1e1e2f", paddingTop: "80px" }}
       >
-       
-        <div className="row">
-          <div className="col">
-            <Navigation />
-          </div>
-        </div>
-         <div>
-          <HeroSection />
-        </div>
-        <div>
-          <LatestGames/>
-        </div>
-        <div className="row my-4">
-          <div className="col">
+        <Navigation />
+
+        <HeroSection />
+
+        <LatestGames />
+
+        <section className="my-5">
+          <div className="container">
             <Games />
           </div>
-        </div>
-        
+        </section>
 
-        <div className="row my-4">
-          <div className="col">
-            <StudentReviews />
+        <section className="my-5">
+          <div className="container">
+            <CustomerReviews />
           </div>
-        </div>
-        <div>
-          <Login/>
-        </div>
+        </section>
 
-        <div className="row mt-5">
-          <div className="col">
-            <Footer />
-          </div>
-        </div>
+        <SignupSection />
+
+        <Footer />
       </div>
     </>
   );

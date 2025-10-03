@@ -1,21 +1,22 @@
-import logo from "./assets/cod.png"
+import logo from "./assets/cod.png";
+
 function Navigation() {
-  
   return (
-    <nav className="navbar navbar-expand-lg bg-white shadow-sm fixed-top">
+    <nav
+      className="navbar navbar-expand-lg fixed-top navbar-dark"
+      style={{
+        backdropFilter: "blur(12px)",
+        background: "rgba(20, 20, 20, 0.8)",
+      }}
+    >
       <div className="container-fluid px-4">
-        {/* Logo */}
-        <a className="navbar-brand fw-bold text-dark" href="#">
-          <img
-            src= {logo}
-            alt="EA Games"
-            height="32"
-            className="me-2"
-          />
-          GameStore
+        {/* Logo + Brand */}
+        <a className="navbar-brand fw-bold d-flex align-items-center" href="#home">
+          <img src={logo} alt="GameStore" height="36" className="me-2 rounded" />
+          <span className="fs-4">GameStore</span>
         </a>
 
-        {/* Mobile Toggler */}
+        {/* Mobile toggle button */}
         <button
           className="navbar-toggler border-0"
           type="button"
@@ -28,42 +29,46 @@ function Navigation() {
           <span className="navbar-toggler-icon"></span>
         </button>
 
-        {/* Nav Items */}
+        {/* Navbar links */}
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav mx-auto">
-            <li className="nav-item">
-              <a className="nav-link fw-semibold text-dark" href="#">
+            <li className="nav-item px-2">
+              <a className="nav-link fw-semibold active" aria-current="page" href="#home">
                 Home
               </a>
             </li>
-            <li className="nav-item">
-              <a className="nav-link fw-semibold text-dark" href="#games">
+
+            {/* Games Dropdown */}
+            <li className="nav-item dropdown px-2">
+              <a
+                className="nav-link dropdown-toggle fw-semibold"
+                href="#games"
+                id="gamesDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
                 Games
               </a>
+              <ul className="dropdown-menu dropdown-menu-dark shadow" aria-labelledby="gamesDropdown">
+                <li><a className="dropdown-item" href="#latest">Latest</a></li>
+                <li><a className="dropdown-item" href="#discounted">Discounted</a></li>
+                <li><a className="dropdown-item" href="#popular">Popular</a></li>
+                <li><a className="dropdown-item" href="#upcoming">Upcoming</a></li>
+              </ul>
             </li>
-            <li className="nav-item">
-              <a className="nav-link fw-semibold text-dark" href="#games">
-                Shop
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link fw-semibold text-dark" href="#reviews">
-                Reviews
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link fw-semibold text-dark" href="#login">
-                Contact
-              </a>
-            </li>
+
+            <li className="nav-item px-2"><a className="nav-link fw-semibold" href="#shop">Shop</a></li>
+            <li className="nav-item px-2"><a className="nav-link fw-semibold" href="#reviews">Reviews</a></li>
+            <li className="nav-item px-2"><a className="nav-link fw-semibold" href="#contact">Contact</a></li>
           </ul>
 
-          {/* Right Section (Cart & Login) */}
-          <div className="d-flex align-items-center">
-            <a href="#login" className="btn btn-link text-dark me-3">
-              Login
+          {/* Right section */}
+          <div className="d-flex flex-column flex-lg-row align-items-lg-center gap-2 gap-lg-3 mt-3 mt-lg-0">
+            <a href="#signup" className="btn btn-outline-light btn-sm px-3 rounded-pill fw-semibold">
+              Login / Sign-Up
             </a>
-            <a href="#" className="btn btn-dark px-3 rounded-pill">
+            <a href="#" className="btn btn-warning btn-sm px-4 rounded-pill fw-semibold shadow-sm">
               🛒 Cart
             </a>
           </div>

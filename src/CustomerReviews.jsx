@@ -29,21 +29,25 @@ function CustomerReviews() {
         </h2>
         <div className="row g-4">
           {reviews.map((review) => (
-            <div key={review.id} className="col-md-4">
+            <div key={review.id} className="col-12 col-sm-6 col-lg-4">
               <div
                 className="card h-100 border-0 shadow-lg rounded-4 text-light"
                 style={{
-                  background: "rgba(30,30,47,0.8)",
+                  background: "rgba(30,30,47,0.85)",
                   backdropFilter: "blur(6px)",
                   border: "1px solid rgba(255,255,255,0.1)",
                   transition: "transform 0.3s ease, box-shadow 0.3s ease",
                 }}
-                onMouseEnter={(e) =>
-                  (e.currentTarget.style.transform = "translateY(-5px)")
-                }
-                onMouseLeave={(e) =>
-                  (e.currentTarget.style.transform = "translateY(0)")
-                }
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = "translateY(-5px)";
+                  e.currentTarget.style.boxShadow =
+                    "0 8px 20px rgba(220,53,69,0.5)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = "translateY(0)";
+                  e.currentTarget.style.boxShadow =
+                    "0 4px 12px rgba(0,0,0,0.3)";
+                }}
               >
                 <div className="card-body text-center p-4">
                   <h6 className="fw-semibold text-danger mb-3">
