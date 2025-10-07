@@ -1,10 +1,10 @@
-import cod from './assets/cod.jpg'
-import cyber from './assets/cyber.jpg'
-import rdr2 from './assets/rdr2.jpg'
-import elden from './assets/elden.webp'
-import fifa from './assets/fifa.png'
-import mine from './assets/mine.webp'
-import AC from './assets/AC.jpg'
+import cod from './assets/cod.jpg';
+import cyber from './assets/cyber.jpg';
+import rdr2 from './assets/rdr2.jpg';
+import elden from './assets/elden.webp';
+import fifa from './assets/fifa.png';
+import mine from './assets/mine.webp';
+import AC from './assets/AC.jpg';
 
 const games = [
   { id: 1, title: "Call of Duty: Modern Warfare II", price: 59.99, discount: 20, platform: "PC / PS5 / Xbox", image: cod, rating: "IGN 7.5/10" },
@@ -20,17 +20,33 @@ const games = [
 
 function Games() {
   return (
-    <section id="games" className="py-5 bg-black text-white">
+    <section id="games" className="py-5" style={{ backgroundColor: "#0d0d0d", color: "#fff" }}>
       <div className="container">
-        <h2 className="text-center mb-5 fw-bold display-6 display-md-5">Games</h2>
+        <h2 className="text-center mb-5 fw-bold display-6 text-warning">
+          Games
+        </h2>
         <div className="row g-4">
           {games.map((game) => {
             const finalPrice = (game.price - (game.price * game.discount) / 100).toFixed(2);
 
             return (
               <div key={game.id} className="col-12 col-sm-6 col-md-4 col-lg-3">
-                <div className="card bg-dark text-light shadow-lg border-0 h-100 position-relative">
-                  
+                <div
+                  className="card text-light border-0 h-100 position-relative"
+                  style={{
+                    backgroundColor: "#1a1a1a",
+                    border: "2px solid #dc3545",
+                    transition: "transform 0.3s ease, box-shadow 0.3s ease",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.transform = "translateY(-6px)";
+                    e.currentTarget.style.boxShadow = "0 8px 20px rgba(220,53,69,0.5)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = "translateY(0)";
+                    e.currentTarget.style.boxShadow = "none";
+                  }}
+                >
                   {game.discount > 0 && (
                     <span
                       className="badge bg-danger position-absolute"
@@ -44,22 +60,22 @@ function Games() {
                     src={game.image}
                     alt={game.title}
                     className="card-img-top img-fluid"
-                    style={{ height: "180px", objectFit: "cover" }}
+                    style={{ height: "180px", objectFit: "cover", borderBottom: "2px solid #dc3545" }}
                   />
 
                   <div className="card-body d-flex flex-column">
-                    <h5 className="card-title mb-2">{game.title}</h5>
+                    <h5 className="card-title mb-2 text-warning">{game.title}</h5>
 
                     <p className="card-text mb-2">
                       {game.discount > 0 ? (
                         <>
-                          <span className="text-light opacity-50 text-decoration-line-through me-2">
+                          <span className="text-secondary text-decoration-line-through me-2">
                             ${game.price.toFixed(2)}
                           </span>
-                          <span className="text-warning fw-bold">${finalPrice}</span>
+                          <span className="text-danger fw-bold">${finalPrice}</span>
                         </>
                       ) : (
-                        <span className="fw-bold">${game.price.toFixed(2)}</span>
+                        <span className="fw-bold text-danger">${game.price.toFixed(2)}</span>
                       )}
                     </p>
 
@@ -68,7 +84,7 @@ function Games() {
 
                     <div className="mt-auto d-flex justify-content-between gap-2">
                       <button className="btn btn-danger rounded-pill w-50">Buy Now</button>
-                      <button className="btn btn-outline-light rounded-pill w-50">Add to Cart</button>
+                      <button className="btn btn-outline-warning rounded-pill w-50">Add to Cart</button>
                     </div>
                   </div>
                 </div>
@@ -79,8 +95,8 @@ function Games() {
 
         <div className="text-center mt-5">
           <button
-            className="btn btn-outline-warning rounded-pill px-4"
-            onClick={() => window.location.href = "/more-games.html"}
+            className="btn btn-outline-danger rounded-pill px-4"
+            onClick={() => (window.location.href = "/more-games.html")}
           >
             More Games →
           </button>

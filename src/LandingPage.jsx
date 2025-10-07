@@ -4,7 +4,8 @@ import CustomerReviews from "./CustomerReviews";
 import Footer from "./Footer";
 import HeroSection from "./Hero Section";
 import LatestGames from "./LatestGames";
-import SignupSection from "./Signupsection";
+import AuthSection from "./AuthSection";
+import FAQ from "./Faq";
 
 function LandingPage() {
   return (
@@ -38,7 +39,10 @@ function LandingPage() {
         </section>
 
         {/* Signup Section */}
-        <SignupSection />
+        <AuthSection />
+
+        {/* FAQ  */}
+        <FAQ/>
 
         {/* Footer */}
         <Footer />
