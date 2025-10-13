@@ -1,8 +1,10 @@
 import { useState } from "react";
-import bgSignup from "./assets/bgimsu.jpg"; // your background image
+import bgSignup from "./assets/bgimsu.jpg";
+import logo from "./assets/logo1.png";
 
 function AuthSection() {
   const [isLogin, setIsLogin] = useState(false);
+  const brandColor = "#ff4d4d"; // your logo color
 
   return (
     <section
@@ -18,7 +20,7 @@ function AuthSection() {
         position: "relative",
       }}
     >
-      {/* Overlay for depth */}
+      {/* Dark overlay */}
       <div
         style={{
           position: "absolute",
@@ -31,29 +33,44 @@ function AuthSection() {
         }}
       ></div>
 
-      {/* Card */}
       <div
         className="card text-light p-4 shadow-lg"
         style={{
           maxWidth: "450px",
           width: "100%",
           background: "linear-gradient(145deg, #161616, #1f1f1f)",
-          border: "1px solid #2a2a2a",
+          border: `1px solid ${brandColor}70`,
           borderRadius: "12px",
           zIndex: 2,
-          boxShadow: "0 0 25px rgba(0, 0, 0, 0.8)",
+          boxShadow: `0 0 20px rgba(0, 0, 0, 0.9)`,
           fontFamily: "'Poppins', sans-serif",
         }}
       >
+        {/* Logo */}
+        <div className="text-center mb-3">
+          <img
+            src={logo}
+            alt="PixelArena Logo"
+            style={{
+              width: "70px",
+              height: "70px",
+              borderRadius: "14px",
+              objectFit: "cover",
+              border: `2px solid ${brandColor}`,
+              padding: "3px",
+              boxShadow: `0 0 12px ${brandColor}66`,
+            }}
+          />
+        </div>
+
         <h3
           className="text-center mb-4 fw-bold"
-          style={{ color: "#ff4d4d", letterSpacing: "1px" }}
+          style={{ color: brandColor, letterSpacing: "1px" }}
         >
           {isLogin ? "Login to PixelArena" : "Join PixelArena"}
         </h3>
 
         <form>
-          {/* Signup → Full Name */}
           {!isLogin && (
             <div className="mb-3">
               <label htmlFor="signupName" className="form-label text-light">
@@ -61,7 +78,7 @@ function AuthSection() {
               </label>
               <input
                 type="text"
-                className="form-control bg-dark text-light border-secondary"
+                className="form-control bg-dark text-light input-custom"
                 id="signupName"
                 placeholder="Enter your name"
                 required
@@ -69,35 +86,32 @@ function AuthSection() {
             </div>
           )}
 
-          {/* Email */}
           <div className="mb-3">
             <label htmlFor="authEmail" className="form-label text-light">
               Email
             </label>
             <input
               type="email"
-              className="form-control bg-dark text-light border-secondary"
+              className="form-control bg-dark text-light input-custom"
               id="authEmail"
               placeholder="Enter your email"
               required
             />
           </div>
 
-          {/* Password */}
           <div className="mb-3">
             <label htmlFor="authPassword" className="form-label text-light">
               Password
             </label>
             <input
               type="password"
-              className="form-control bg-dark text-light border-secondary"
+              className="form-control bg-dark text-light input-custom"
               id="authPassword"
               placeholder={isLogin ? "Enter your password" : "Create a password"}
               required
             />
           </div>
 
-          {/* Signup only → Confirm Password + Gender */}
           {!isLogin && (
             <>
               <div className="mb-3">
@@ -109,7 +123,7 @@ function AuthSection() {
                 </label>
                 <input
                   type="password"
-                  className="form-control bg-dark text-light border-secondary"
+                  className="form-control bg-dark text-light input-custom"
                   id="signupConfirmPassword"
                   placeholder="Confirm password"
                   required
@@ -150,7 +164,6 @@ function AuthSection() {
             </>
           )}
 
-          {/* Login only → Remember Me */}
           {isLogin && (
             <div className="mb-3 form-check">
               <input type="checkbox" className="form-check-input" id="rememberMe" />
@@ -160,32 +173,28 @@ function AuthSection() {
             </div>
           )}
 
-          {/* Submit Button */}
           <button
             type="submit"
             className="btn w-100 rounded-pill mt-2 fw-bold"
             style={{
-              backgroundColor: "#ff4d4d",
+              backgroundColor: brandColor,
               color: "#fff",
               border: "none",
               transition: "0.3s ease",
             }}
             onMouseOver={(e) => (e.target.style.backgroundColor = "#ff6666")}
-            onMouseOut={(e) => (e.target.style.backgroundColor = "#ff4d4d")}
+            onMouseOut={(e) => (e.target.style.backgroundColor = brandColor)}
           >
             {isLogin ? "Login" : "Sign Up"}
           </button>
         </form>
 
-        {/* Switch Link */}
         <div className="text-center mt-4">
           <small className="opacity-75">
             {isLogin ? "Don’t have an account?" : "Already have an account?"}{" "}
             <button
               className="btn btn-link p-0 fw-semibold text-decoration-none"
-              style={{
-                color: "#ff4d4d",
-              }}
+              style={{ color: brandColor }}
               onClick={() => setIsLogin(!isLogin)}
             >
               {isLogin ? "Sign Up" : "Login"}
@@ -193,6 +202,23 @@ function AuthSection() {
           </small>
         </div>
       </div>
+
+      {/* Custom CSS */}
+      <style>{`
+        .input-custom {
+          border: 1px solid ${brandColor}80;
+          transition: all 0.3s ease;
+          box-shadow: inset 0 0 4px rgba(255, 77, 77, 0.3);
+        }
+        .input-custom:focus {
+          border-color: ${brandColor};
+          box-shadow: 0 0 8px ${brandColor}99, inset 0 0 4px ${brandColor}66;
+        }
+        .form-control::placeholder {
+          color: #aaa;
+          opacity: 0.8;
+        }
+      `}</style>
     </section>
   );
 }

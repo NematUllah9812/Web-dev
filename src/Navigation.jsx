@@ -63,22 +63,22 @@ function Navigation() {
                 aria-labelledby="gamesDropdown"
               >
                 <li>
-                  <a className="dropdown-item" href="#latest">
+                  <a className="dropdown-item" href="#Latestgames">
                     Latest
                   </a>
                 </li>
                 <li>
-                  <a className="dropdown-item" href="#discounted">
+                  <a className="dropdown-item" href="#games">
                     Discounted
                   </a>
                 </li>
                 <li>
-                  <a className="dropdown-item" href="#popular">
+                  <a className="dropdown-item" href="#Latestgames">
                     Popular
                   </a>
                 </li>
                 <li>
-                  <a className="dropdown-item" href="#upcoming">
+                  <a className="dropdown-item" href="#Latestgames">
                     Upcoming
                   </a>
                 </li>
@@ -96,7 +96,7 @@ function Navigation() {
               </a>
             </li>
             <li className="nav-item px-2">
-              <a className="nav-link fw-semibold" href="#contact">
+              <a className="nav-link fw-semibold" href="#Footer">
                 Contact
               </a>
             </li>
@@ -104,7 +104,7 @@ function Navigation() {
 
           <div className="d-flex flex-column flex-lg-row align-items-lg-center gap-2 gap-lg-3 mt-3 mt-lg-0">
             <a
-              href="#signup"
+              href="#auth"
               className="btn btn-outline-light btn-sm px-3 rounded-pill fw-semibold custom-login-btn"
             >
               Login / Sign-Up

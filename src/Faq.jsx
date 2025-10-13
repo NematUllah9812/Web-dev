@@ -4,19 +4,49 @@ function FAQ() {
       id: 1,
       question: "How can I buy games from PixelArena?",
       answer:
-        "Explore our game catalog, add your favorites to the cart, and securely checkout using multiple payment options.",
+        "Browse our catalog, add your favorite games to your cart, and checkout securely using your preferred payment method.",
     },
     {
       id: 2,
       question: "Are discounts available on new releases?",
       answer:
-        "Yes! PixelArena offers early-bird and seasonal discounts on select new releases. Follow us to stay updated.",
+        "Yes! PixelArena frequently offers early-bird and seasonal discounts on select new titles. Follow us on social media to stay updated.",
     },
     {
       id: 3,
       question: "How can I contact support?",
       answer:
-        "You can reach our support team via the Contact section or by emailing support@pixelarena.com.",
+        "You can contact our support team anytime via the Contact section or by emailing support@pixelarena.com.",
+    },
+    {
+      id: 4,
+      question: "Do I need an account to make a purchase?",
+      answer:
+        "Yes, creating an account ensures secure checkout, order tracking, and access to special member discounts.",
+    },
+    {
+      id: 5,
+      question: "What payment methods do you accept?",
+      answer:
+        "We accept major debit/credit cards, PayPal, and regional wallets depending on your location.",
+    },
+    {
+      id: 6,
+      question: "Can I refund or exchange a purchased game?",
+      answer:
+        "Digital purchases are non-refundable once activated, but you can contact support for assistance with specific cases.",
+    },
+    {
+      id: 7,
+      question: "Does PixelArena offer gift cards?",
+      answer:
+        "Yes, digital gift cards are available in multiple denominations and can be sent instantly to friends or family.",
+    },
+    {
+      id: 8,
+      question: "Is my personal information secure?",
+      answer:
+        "Absolutely. PixelArena uses advanced encryption and never shares your personal data with third parties.",
     },
   ];
 

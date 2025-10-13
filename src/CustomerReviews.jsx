@@ -1,21 +1,28 @@
+import { FaStar, FaQuoteLeft } from "react-icons/fa";
+
 function CustomerReviews() {
   const reviews = [
     {
       id: 1,
       name: "Alex Johnson",
-      review: "Absolutely love the graphics and gameplay! Feels so immersive.",
+      review:
+        "Absolutely love the graphics and gameplay! Feels so immersive.",
     },
     {
       id: 2,
       name: "Maria Lopez",
-      review: "Customer support was fast and friendly. Great experience overall!",
+      review:
+        "Customer support was fast and friendly. Great experience overall!",
     },
     {
       id: 3,
       name: "James Carter",
-      review: "The discounts make premium games affordable. Totally recommend!",
+      review:
+        "The discounts make premium games affordable. Totally recommend!",
     },
   ];
+
+  const brandColor = "#ff4d4d";
 
   return (
     <section
@@ -29,7 +36,7 @@ function CustomerReviews() {
         <h2
           className="text-center mb-5 fw-bold display-6"
           style={{
-            color: "#ff4d4d",
+            color: brandColor,
             letterSpacing: "1px",
           }}
         >
@@ -43,26 +50,30 @@ function CustomerReviews() {
                 className="card h-100 border-0 shadow-lg rounded-4 text-light"
                 style={{
                   background: "linear-gradient(145deg, #161616, #1f1f1f)",
-                  border: "1px solid #2a2a2a",
-                  transition: "transform 0.3s ease, box-shadow 0.3s ease",
-                  boxShadow: "0 4px 12px rgba(0,0,0,0.4)",
+                  border: `2px solid ${brandColor}`,
+                  boxShadow: `0 0 10px ${brandColor}33`,
+                  transition:
+                    "transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease",
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.transform = "translateY(-6px)";
-                  e.currentTarget.style.boxShadow =
-                    "0 8px 20px rgba(255,77,77,0.4)";
+                  e.currentTarget.style.boxShadow = `0 0 20px ${brandColor}88`;
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.transform = "translateY(0)";
-                  e.currentTarget.style.boxShadow =
-                    "0 4px 12px rgba(0,0,0,0.4)";
+                  e.currentTarget.style.boxShadow = `0 0 10px ${brandColor}33`;
                 }}
               >
                 <div className="card-body text-center p-4">
+                  <FaQuoteLeft
+                    size={30}
+                    color={brandColor}
+                    className="mb-3 opacity-75"
+                  />
                   <h6
                     className="fw-bold mb-3"
                     style={{
-                      color: "#ff4d4d",
+                      color: brandColor,
                       textTransform: "uppercase",
                       letterSpacing: "0.5px",
                     }}
@@ -70,7 +81,7 @@ function CustomerReviews() {
                     {review.name}
                   </h6>
                   <p
-                    className="fst-italic opacity-75"
+                    className="fst-italic opacity-75 mb-3"
                     style={{
                       color: "#f1f1f1",
                       fontFamily: "'Poppins', sans-serif",
@@ -78,6 +89,11 @@ function CustomerReviews() {
                   >
                     “{review.review}”
                   </p>
+                  <div>
+                    {[...Array(5)].map((_, i) => (
+                      <FaStar key={i} color={brandColor} size={18} />
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
