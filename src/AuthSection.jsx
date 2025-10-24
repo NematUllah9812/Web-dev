@@ -3,8 +3,8 @@ import bgSignup from "./assets/bgimsu.jpg";
 import logo from "./assets/logo1.png";
 
 function AuthSection() {
-  const [isLogin, setIsLogin] = useState(false);
-  const brandColor = "#ff4d4d"; // your logo color
+  const [isLogin, setIsLogin] = useState(true);
+  const brandColor = "#ff4d4d";
 
   return (
     <section
@@ -12,7 +12,6 @@ function AuthSection() {
       className="d-flex align-items-center justify-content-center py-5"
       style={{
         minHeight: "100vh",
-        background: "linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%)",
         backgroundImage: `url(${bgSignup})`,
         backgroundBlendMode: "overlay",
         backgroundSize: "cover",
@@ -20,21 +19,16 @@ function AuthSection() {
         position: "relative",
       }}
     >
-      {/* Dark overlay */}
       <div
+        className="position-absolute top-0 start-0 w-100 h-100"
         style={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          width: "100%",
-          height: "100%",
-          backgroundColor: "rgba(0, 0, 0, 0.7)",
+          backgroundColor: "rgba(0,0,0,0.7)",
           zIndex: 1,
         }}
       ></div>
 
       <div
-        className="card text-light p-4 shadow-lg"
+        className="card text-light p-4 shadow-lg position-relative"
         style={{
           maxWidth: "450px",
           width: "100%",
@@ -46,7 +40,6 @@ function AuthSection() {
           fontFamily: "'Poppins', sans-serif",
         }}
       >
-        {/* Logo */}
         <div className="text-center mb-3">
           <img
             src={logo}
@@ -115,10 +108,7 @@ function AuthSection() {
           {!isLogin && (
             <>
               <div className="mb-3">
-                <label
-                  htmlFor="signupConfirmPassword"
-                  className="form-label text-light"
-                >
+                <label htmlFor="signupConfirmPassword" className="form-label text-light">
                   Confirm Password
                 </label>
                 <input
@@ -175,15 +165,7 @@ function AuthSection() {
 
           <button
             type="submit"
-            className="btn w-100 rounded-pill mt-2 fw-bold"
-            style={{
-              backgroundColor: brandColor,
-              color: "#fff",
-              border: "none",
-              transition: "0.3s ease",
-            }}
-            onMouseOver={(e) => (e.target.style.backgroundColor = "#ff6666")}
-            onMouseOut={(e) => (e.target.style.backgroundColor = brandColor)}
+            className="btn w-100 rounded-pill mt-2 fw-bold btn-auth"
           >
             {isLogin ? "Login" : "Sign Up"}
           </button>
@@ -193,27 +175,47 @@ function AuthSection() {
           <small className="opacity-75">
             {isLogin ? "Don’t have an account?" : "Already have an account?"}{" "}
             <button
-              className="btn btn-link p-0 fw-semibold text-decoration-none"
-              style={{ color: brandColor }}
+              className="btn btn-link p-0 fw-semibold text-decoration-none toggle-auth"
               onClick={() => setIsLogin(!isLogin)}
             >
-              {isLogin ? "Sign Up" : "Login"}
+              {isLogin ? "Sign-Up" : "Login"}
             </button>
           </small>
         </div>
       </div>
 
-      {/* Custom CSS */}
+
       <style>{`
         .input-custom {
           border: 1px solid ${brandColor}80;
-          transition: all 0.3s ease;
           box-shadow: inset 0 0 4px rgba(255, 77, 77, 0.3);
         }
         .input-custom:focus {
           border-color: ${brandColor};
           box-shadow: 0 0 8px ${brandColor}99, inset 0 0 4px ${brandColor}66;
         }
+
+        /* Button hover effect */
+        .btn-auth {
+          background-color: ${brandColor};
+          color: #fff;
+          border: none;
+        }
+        .btn-auth:hover {
+          background-color: #ff6666;
+          box-shadow: 0 0 12px ${brandColor};
+          transform: translateY(-2px);
+        }
+
+        /* Toggle link hover */
+        .toggle-auth {
+          color: ${brandColor};
+        }
+        .toggle-auth:hover {
+          color: #ff9999;
+        }
+
+        /* Placeholder styling */
         .form-control::placeholder {
           color: #aaa;
           opacity: 0.8;

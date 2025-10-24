@@ -1,4 +1,4 @@
-import bgim from "./assets/bgim.jpg"
+import bgim from "./assets/bgim.jpg";
 
 function HeroSection() {
   return (
@@ -19,21 +19,33 @@ function HeroSection() {
       ></div>
 
       <div className="container position-relative z-2" style={{ zIndex: 2 }}>
-        <h1 className="display-4 display-md-3 fw-bold mb-3">
-          Experience Gaming Like Never Before
-        </h1>
+        <h1 className="display-4 fw-bold mb-3">Experience Gaming Like Never Before</h1>
         <p className="lead mb-4 px-2 px-md-5">
           Discover the latest releases, best sellers, and exclusive discounts – all in one place.
         </p>
+
         <div className="d-flex flex-column flex-sm-row justify-content-center gap-3">
-          <a href="#Latestgames" className="btn btn-danger btn-lg rounded-pill px-4">
+          <a href="#Latestgames" className="btn btn-danger btn-lg rounded-pill px-4 hero-btn-red">
             Buy Now
           </a>
-          <a href="#games" className="btn btn-outline-light btn-lg rounded-pill px-4">
+          <a href="#games" className="btn btn-outline-light btn-lg rounded-pill px-4 hero-btn-white">
             Learn More
           </a>
         </div>
       </div>
+
+      <style>
+        {`
+          .hero-btn-red:hover {
+            background-color: #ff4d4d;
+          }
+
+          .hero-btn-white:hover {
+            background-color: #fff;
+            color: #000 !important;
+          }
+        `}
+      </style>
     </section>
   );
 }

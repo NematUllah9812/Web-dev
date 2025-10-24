@@ -4,7 +4,7 @@ import DA from "./assets/DA.jfif";
 import FC from "./assets/FC.jfif";
 
 function LatestGames() {
-  const brandColor = "#ff4d4d"; // matches your logo
+  const brandColor = "#ff4d4d";
   const latestGames = [
     { id: 1, title: "EA FC 25", tagline: "The world’s game, reimagined.", image: FC, link: "#" },
     { id: 2, title: "Battlefield 2042", tagline: "All-out warfare. Evolved.", image: BF, link: "#" },
@@ -35,62 +35,23 @@ function LatestGames() {
         <div className="row g-4">
           {latestGames.map((game) => (
             <div key={game.id} className="col-12 col-sm-6 col-lg-3">
-              <div
-                className="card border-0 h-100 text-light game-card"
-                style={{
-                  backgroundColor: "#1a1a1a",
-                  border: `2px solid ${brandColor}`,
-                  borderRadius: "16px",
-                  transition: "transform 0.3s ease, box-shadow 0.3s ease",
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = "translateY(-6px)";
-                  e.currentTarget.style.boxShadow = `0 8px 20px ${brandColor}80`;
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = "translateY(0)";
-                  e.currentTarget.style.boxShadow = "none";
-                }}
-              >
+              <div className="card border-0 h-100 text-light game-card">
                 <img
                   src={game.image}
                   alt={game.title}
                   className="card-img-top img-fluid"
-                  style={{
-                    objectFit: "cover",
-                    height: "220px",
-                    borderTopLeftRadius: "14px",
-                    borderTopRightRadius: "14px",
-                    borderBottom: `2px solid ${brandColor}`,
-                  }}
                 />
 
                 <div className="card-body d-flex flex-column p-3">
-                  <h5
-                    className="card-title fw-bold text-warning mb-2"
-                    style={{ fontSize: "1rem" }}
-                  >
+                  <h5 className="card-title fw-bold text-warning mb-2">
                     {game.title}
                   </h5>
-                  <p
-                    className="card-text text-secondary mb-3"
-                    style={{
-                      fontSize: "0.9rem",
-                      lineHeight: "1.4",
-                    }}
-                  >
+                  <p className="card-text text-secondary mb-3">
                     {game.tagline}
                   </p>
                   <a
                     href={game.link}
-                    className="btn mt-auto rounded-pill fw-semibold"
-                    style={{
-                      backgroundColor: brandColor,
-                      border: "none",
-                      color: "#fff",
-                      fontSize: "0.85rem",
-                      padding: "0.6rem 1.2rem",
-                    }}
+                    className="btn mt-auto rounded-pill fw-semibold learn-btn"
                   >
                     Learn More
                   </a>
@@ -101,9 +62,41 @@ function LatestGames() {
         </div>
       </div>
 
-      {/* Responsive adjustments */}
       <style>
         {`
+          .game-card {
+            background-color: #1a1a1a;
+            border: 2px solid ${brandColor};
+            border-radius: 16px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+          }
+
+          .game-card img {
+            object-fit: cover;
+            height: 220px;
+            border-top-left-radius: 14px;
+            border-top-right-radius: 14px;
+            border-bottom: 2px solid ${brandColor};
+          }
+
+          .game-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 8px 20px ${brandColor}80;
+          }
+
+          .learn-btn {
+            background-color: ${brandColor};
+            border: none;
+            color: #fff;
+            font-size: 0.85rem;
+            padding: 0.6rem 1.2rem;
+            transition: background-color 0.3s ease;
+          }
+
+          .learn-btn:hover {
+            background-color: #ff1a1a;
+          }
+
           @media (max-width: 992px) {
             .game-card img {
               height: 180px !important;
@@ -131,7 +124,7 @@ function LatestGames() {
             .game-card p {
               font-size: 0.8rem !important;
             }
-            .game-card a {
+            .learn-btn {
               font-size: 0.75rem !important;
               padding: 0.4rem 0.8rem !important;
             }

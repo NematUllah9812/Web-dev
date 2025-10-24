@@ -61,7 +61,7 @@ function FAQ() {
     >
       <div className="container">
         <h2 className="text-center mb-5 fw-bold display-6 text-danger">
-          Frequently Asked Questions
+          Frequently Asked Questions!?
         </h2>
 
         <div className="accordion accordion-flush" id="faqAccordion">

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import logo from "./assets/logo1.png";
 
 function Navigation() {
@@ -10,154 +11,54 @@ function Navigation() {
       }}
     >
       <div className="container-fluid px-4">
-        <a
-          className="navbar-brand fw-bold d-flex align-items-center"
-          href="#home"
-        >
+        <Link to="/" className="navbar-brand fw-bold d-flex align-items-center">
           <img
             src={logo}
-            alt="PixelArena"
-            height="36"
-            className="me-2 rounded"
+            alt="Logo"
+            style={{ height: "40px", marginRight: "10px" }}
           />
-          <span className="fs-4">PixelArena</span>
-        </a>
+          PixelArena
+        </Link>
 
         <button
-          className="navbar-toggler border-0"
+          className="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
         >
           <span className="navbar-toggler-icon"></span>
         </button>
 
         <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav mx-auto">
-            <li className="nav-item px-2">
-              <a
-                className="nav-link fw-semibold active"
-                aria-current="page"
-                href="#home"
-              >
+          <ul className="navbar-nav ms-auto">
+            <li className="nav-item">
+              <Link to="/" className="nav-link">
                 Home
-              </a>
+              </Link>
             </li>
-
-            <li className="nav-item dropdown px-2">
-              <a
-                className="nav-link dropdown-toggle fw-semibold"
-                href="#games"
-                id="gamesDropdown"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
+            <li className="nav-item">
+              <Link to="/games" className="nav-link">
                 Games
-              </a>
-              <ul
-                className="dropdown-menu dropdown-menu-dark shadow"
-                aria-labelledby="gamesDropdown"
-              >
-                <li>
-                  <a className="dropdown-item" href="#Latestgames">
-                    Latest
-                  </a>
-                </li>
-                <li>
-                  <a className="dropdown-item" href="#games">
-                    Discounted
-                  </a>
-                </li>
-                <li>
-                  <a className="dropdown-item" href="#Latestgames">
-                    Popular
-                  </a>
-                </li>
-                <li>
-                  <a className="dropdown-item" href="#Latestgames">
-                    Upcoming
-                  </a>
-                </li>
-              </ul>
+              </Link>
             </li>
-
-            <li className="nav-item px-2">
-              <a className="nav-link fw-semibold" href="#shop">
-                Shop
-              </a>
+            <li className="nav-item">
+              <Link to="/latest-games" className="nav-link">
+                Latest
+              </Link>
             </li>
-            <li className="nav-item px-2">
-              <a className="nav-link fw-semibold" href="#reviews">
-                Reviews
-              </a>
+            <li className="nav-item">
+              <Link to="/cart" className="nav-link">
+                🛒 Cart
+              </Link>
             </li>
-            <li className="nav-item px-2">
-              <a className="nav-link fw-semibold" href="#Footer">
-                Contact
-              </a>
+            <li className="nav-item">
+              <Link to="/admin" className="nav-link">
+                Admin Portal
+              </Link>
             </li>
           </ul>
-
-          <div className="d-flex flex-column flex-lg-row align-items-lg-center gap-2 gap-lg-3 mt-3 mt-lg-0">
-            <a
-              href="#auth"
-              className="btn btn-outline-light btn-sm px-3 rounded-pill fw-semibold custom-login-btn"
-            >
-              Login / Sign-Up
-            </a>
-            <a
-              href="#"
-              className="btn btn-warning btn-sm px-4 rounded-pill fw-semibold shadow-sm custom-cart-btn"
-            >
-              🛒 Cart
-            </a>
-          </div>
         </div>
       </div>
-
-      <style>
-        {`
-          .custom-login-btn {
-            border: 2px solid #f8f9fa;
-            transition: all 0.3s ease;
-            color: #f8f9fa;
-          }
-
-          .custom-login-btn:hover {
-            background-color: #ffffffd2;
-            border-color: #000000ff;
-            color: #000000ff;
-            box-shadow: 0 0 3px rgba(255, 255, 255, 0.8);
-            transform: translateY(-2px);
-          }
-
-          .custom-cart-btn {
-            background-color: #dc3545 !important;
-            border: none;
-            color: #fff !important;
-            transition: all 0.3s ease;
-          }
-
-          .custom-cart-btn:hover {
-            background-color: #ff4757 !important;
-            box-shadow: 0 0 15px rgba(255, 71, 87, 0.8);
-            transform: translateY(-2px);
-          }
-
-          .nav-link {
-            transition: color 0.3s ease, text-shadow 0.3s ease;
-          }
-
-          .nav-link:hover {
-            color: #ff4757 !important;
-            text-shadow: 0 0 8px rgba(255, 71, 87, 0.7);
-          }
-        `}
-      </style>
     </nav>
   );
 }
